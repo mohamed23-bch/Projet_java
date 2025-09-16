@@ -1,5 +1,8 @@
 package intervention;
 
+import utilisateur.Mecanicien;
+import voiture.Voiture;
+
 import java.util.Date;
 
 public class Intervention {
@@ -8,12 +11,16 @@ public class Intervention {
     private String description;
     private Float cout;
     private String status;
+    private Voiture voiture;
+    private Mecanicien  mecanicien;
 
-    public Intervention(Date date, String description, Float cout, String status) {
+    public Intervention(Date date, String description, Float cout, String status,Voiture voiture,Mecanicien mecanicien) {
         this.date = date;
         this.description = description;
         this.cout = cout;
         this.status = status;
+        this.voiture = voiture;
+        this.mecanicien = mecanicien;
     }
     public Date getDate() {
         return date;
@@ -30,6 +37,12 @@ public class Intervention {
 
     public String getStatus() {return status;}
     public void setStatus(String status) {this.status = status;}
+
+    public Voiture getVoiture() {return voiture;}
+    public void setVoiture(Voiture voiture) {this.voiture = voiture; }
+
+    public Mecanicien getMecanicien() {return mecanicien;}
+    public void setMecanicien(Mecanicien mecanicien) {this.mecanicien = mecanicien; }
 
     @Override
     public String toString() {

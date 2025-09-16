@@ -3,12 +3,15 @@ package Garage;
 import utilisateur.Mecanicien;
 import voiture.Voiture;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Garage {
     private String nom;
     private String adresse;
     private int telephone;
-    Voiture voiture;
-    Mecanicien mecanicien;
+    private List<Voiture> voiture ;
+    private List<Mecanicien> mecanicien;
 
     public String getNom() {return this.nom;}
     public void setNom(String nom) {this.nom = nom;}
@@ -19,12 +22,21 @@ public class Garage {
     public int getTelephone() {return this.telephone;}
     public void setTelephone(int telephone) {this.telephone = telephone;}
 
-    public Garage(String nom, String adresse, int telephone, Voiture voiture, Mecanicien mecanicien) {
+    public List<Voiture> getVoiture() {return this.voiture;}
+
+    public void setVoiture(List<Voiture> voiture) {
+        this.voiture = voiture;
+    }
+
+    public List<Mecanicien> getMecanicien() {return this.mecanicien;}
+    public void setMecanicien(List<Mecanicien> mecanicien) {this.mecanicien = mecanicien;}
+
+    public Garage(String nom, String adresse, int telephone) {
         this.nom = nom;
         this.adresse = adresse;
         this.telephone = telephone;
-        this.voiture = voiture;
-        this.mecanicien = mecanicien;
+        this.voiture = new ArrayList<Voiture>();
+        this.mecanicien = new ArrayList<Mecanicien>();
     }
 
 }
